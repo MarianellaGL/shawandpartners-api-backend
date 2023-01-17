@@ -22,7 +22,7 @@ const getAllUsers = async (req, res) => {
         handleError(e, res)
     }
 
-    res.send(response.data.map((user) => user.login))
+    res.send(response.data.map((user) => { return { id: user.id, login: user.login } } ))
 }
 
 const getUser = async function (req, res) {
